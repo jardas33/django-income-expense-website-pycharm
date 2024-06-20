@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import django_heroku
+
 
 load_dotenv()
 
@@ -127,6 +129,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS= [os.path.join(BASE_DIR, 'expenseswebsite/static')]
 STATIC_ROOT=os.path.join(BASE_DIR, 'static')
+
+django_heroku.settings(locals())
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

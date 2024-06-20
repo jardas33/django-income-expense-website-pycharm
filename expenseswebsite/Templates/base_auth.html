@@ -17,49 +17,21 @@
         body {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa; /* Light background color */
         }
-        .container-fluid {
-            flex: 1;
-            display: flex;
-            padding: 0;
+        .container {
+            width: 100%;
+            max-width: 400px; /* Adjust this value as needed */
+            padding: 15px;
         }
-        .main-content {
-            margin-left: 320px; /* Adjust this margin to match sidebar width */
-            padding: 20px;
-            flex: 1;
-        }
-        .form-control-dark {
-            background-color: #f8f9fa !important; /* Matching the sidebar background */
-            border-color: #f8f9fa !important; /* Matching the sidebar background */
-            color: #000; /* Dark text color */
-        }
-        .form-control-dark:focus {
-            background-color: #f8f9fa !important; /* Ensure it stays grey when focused */
-            border-color: #f8f9fa !important; /* Ensure it stays grey when focused */
-            color: #000; /* Dark text color */
-        }
-
     </style>
 </head>
 <body>
-    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">TrulyExpenses</a>
-        <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search" style="width: calc(100% - 320px);"> <!-- Adjust width to match the sidebar -->
-        <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="#">Sign out</a>
-            </div>
-        </div>
-    </header>
-    <div class="container-fluid">
-        {% include 'partials/_sidebar.html' %}
-        <main class="main-content">
-            {% block content %}
-
-
-
-            {% endblock %}
-        </main>
+    <div class="container mt-5">
+        {% block content %}
+        {% endblock %}
     </div>
     <script src="{% static 'docs/5.3/dist/js/bootstrap.bundle.min.js' %}" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script>
